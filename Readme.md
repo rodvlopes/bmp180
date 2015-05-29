@@ -1,5 +1,5 @@
 # About
-C Code to access Bosch BMP085 BMP 180 from __Raspberry Pi__
+C Code to access Bosch BMP085 BMP 180 from __Raspberry Pi__ (also works with _generic_ bmp180)
 
 An lightweight alternative to the [ADAFruit Python version](https://github.com/adafruit/Adafruit_Python_BMP)
 
