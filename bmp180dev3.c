@@ -269,8 +269,8 @@ int bmp_GetTemperature(int fd, double *Temp)
 }
 
 double bmp_altitude(double p){
-  return 145437.86*(1- pow((p/1013.25),0.190294496)); //return feet
-  //return 44330*(1- pow((p/1013.25),0.190294496)); //return meters
+  //return 145437.86*(1- pow((p/1013.25),0.190294496)); //return feet
+  return 44330*(1- pow((p/1013.25),0.190294496)); //return meters
 }
 
 double bmp_qnh(double p,double StationAlt){
@@ -279,6 +279,7 @@ double bmp_qnh(double p,double StationAlt){
 }
 
 double ppl_DensityAlt(double PAlt,double Temp){
+    //This shall be reviewed due to a change from ft to meters in PAlt
   double ISA = 15 - (1.98*(PAlt/1000));
   return PAlt+(120*(Temp-ISA)); //So,So density altitude
 }
@@ -293,7 +294,7 @@ int main(int argc, char **argv)
 	printf ("Return:%i\tTemperature\t:%.1f C\n",bmp_GetTemperature(fd,&temperature),temperature);
 	printf ("Return:%i\tPressure\t:%.2f hPa/mB\tThis is known as station pressure\n",bmp_GetPressure(fd,&pressure),pressure);
 	PAlt=bmp_altitude(pressure);
-	printf ("\t\tP.Altitude\t:%.0f ft\tThis is known as a Pressure Altitude\n",PAlt);
+	printf ("\t\tP.Altitude\t:%.0f m\tThis is known as a Pressure Altitude\n",PAlt);
 	printf ("\t\tQNH\t\t:%.2f hPa/mB\tSetting required on an Aircraft\n",bmp_qnh(pressure,5085)); //5085 ft is my station elevation
 	printf ("\t\t\t\t\t\taltimeter for it to read Elevation while on the ground\n");	             //use your's
 	printf ("\t\t\t\t\t\tand Altitude while in the air\n");
