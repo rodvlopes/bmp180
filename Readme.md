@@ -10,6 +10,3 @@ This is also an lightweight _alternative_ to the [ADAFruit Python version](https
 - Run straight from command line
 - No strange dependecy 
 - Simple output mode `--short` to be easy parse parseable
-
-# Todo
-- make install/uninstall
