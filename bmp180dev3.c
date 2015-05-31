@@ -294,6 +294,12 @@ int main(int argc, char **argv)
     int ret_tmp = bmp_GetTemperature(fd,&temperature);
     int ret_prs = bmp_GetPressure(fd,&pressure);
 
+    if ( (ret_cal + ret_tmp + ret_prs) > 0 )
+    {
+        printf ("Error reading sensor.");
+        return 1;
+    }
+
     if (argc > 1 && strcmp(argv[1], "--short") == 0) 
     {
         printf ("%.1f C\n",temperature);

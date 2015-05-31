@@ -9,3 +9,8 @@ $(TARGET): *.c *.h
 clean:
 		-rm $(TARGET)
 
+install: $(TARGET)
+		cp bmp180 /usr/local/bin/bmp180
+        
+uninstall:
+		rm /usr/local/bin/bmp180
