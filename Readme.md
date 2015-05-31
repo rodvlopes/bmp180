@@ -9,7 +9,7 @@ An lightweight alternative to the [ADAFruit Python version](https://github.com/a
 - Lightweight 13Kb binary
 - Run straight form command line
 - No strange dependecy 
+- Simple output mode `--short` to be easy parse parseable
 
 # Todo
-- Simple output mode to make it easier to parse from another application
 - make install/uninstall
